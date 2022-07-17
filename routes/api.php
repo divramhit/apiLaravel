@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderTableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +25,9 @@ use App\Http\Controllers\ClientController;
 // Route::group(['middleware' => ['api']], function () {
 // });
 
-Route::get('/get-products', [ProductsController::class, 'getProducts']);
-Route::get('/get-clients', [ClientController::class, 'getClients']);
-Route::post('/checkLogin', [ClientController::class, 'loginHandler']);
-Route::get('/checkSession', [ClientController::class, 'checkSession']);
-Route::post('/destroySession', [ClientController::class, 'destroySession']);
+Route::get('/get-allproducts', [ProductsController::class, 'getAllProducts']);
+Route::get('/get-allclients', [ClientController::class, 'getAllClients']);
+Route::get('/get-allcategories', [CategoryController::class, 'getAllCategories']);
+Route::get('/get-allorders', [OrderTableController::class, 'getAllOrders']);
+Route::post('/delete-category', [CategoryController::class, 'deleteCategory']);
+Route::post('/delete-product', [ProductsController::class, 'deleteProduct']);

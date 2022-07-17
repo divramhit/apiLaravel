@@ -21,6 +21,7 @@ class CreateProductTable extends Migration
             $table->string('imgpath');
             $table->integer('ListPrice');
             $table->tinyInteger('UnitInStock');
+            $table->integer('DELETED_FLAG')->default(0);
         });
     }
 
