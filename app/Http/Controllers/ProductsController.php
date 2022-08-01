@@ -8,7 +8,7 @@ use App\Models\product;
 
 class ProductsController extends Controller
 {
-    //
+    //Added Products deleted
     public function getAllProducts(){
         $product = DB::select('select * from product where DELETED_FLAG = 0');
         return response()->json($product);
